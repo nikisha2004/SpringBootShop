@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vietnam Tour Packages</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <a class="logo" href="#" target="_blank" rel="noopener noreferrer">
+      <img src="assets/images/thrillophilia-logo.svg" alt="Thrillophilia" />
+    </a>
+    <div class="search-box">
+      <div class="search-icon"></div>
+      <input type="text" placeholder="" id="searchInput" />
+      <div class="search-display-text">Search for <span class="bold-part">Countries</span></div>
+    </div>
+    <div class="user-options">
+      <div class="currency">
+        <span class="currency-text">INR</span>
+        <i class="arrow"></i>
+      </div>
+      <div class="profile">
+        <div class="avatar">KM</div>
+        <span>Hi, kunal</span>
+        <i class="arrow"></i>
+      </div>
+      <div class="mobile-toggle" id="mobileToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#tours">Tours</a>
+    <a href="#packages">Packages</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- Title -->
+  <div class="title-wrap">
+    <div class="title"><span class="accent">Vietnam</span><span class="title-text-dark"> Tour Packages</span></div>
+    <div class="subtitle">Top Prices & Deals for Your Vietnam Trip</div>
+  </div>
+
+  <!-- Hero carousel -->
+  <div class="hero-carousel">
+    <div class="hero-images">
+      <img class="hero-img" src="assets/images/vietnam_img.webp" alt="Vietnam Honeymoon">
+      <img class="hero-img" src="assets/images/vietnam_2.jpg" alt="Vietnam Family Trip">
+      <img class="hero-img" src="assets/images/vietnam_3.jpg" alt="Vietnam Adventure">
+      <img class="hero-img" src="assets/images/vietnam_4.jpg" alt="Vietnam Culture">
+    </div>
+    <div class="hero-dots">
+      <div class="hero-dot active"></div>
+      <div class="hero-dot"></div>
+      <div class="hero-dot"></div>
+      <div class="hero-dot"></div>
+    </div>
+  </div>
+
+  <!-- Hero overlay card -->
+  <div class="hero-gradient">
+    <div class="hero-gradient-content">
+      <div class="hero-gradient-subcontent">
+        <div class="hero-rating-row">
+          <div class="rating">
+            <span class="star"></span>
+            <span class="hero-rating-text">4.8</span>
+            <span class="hero-rating-reviews">(3.5k+)</span>
+          </div>
+          <div class="badge">Monsoon Sale</div>
+          <div class="flights-badge">
+            <span class="flights-icon">✈</span>
+            <span>Flights</span>
+          </div>
+        </div>
+        <div class="hero-title">8N Vietnam with Kids: Beaches, Bridges & Big Adventures</div>
+      </div>
+      <div class="hero-meta-row">
+        <div class="chip">4 Days & 3 Night</div>
+        <div class="hero-meta"><span class="hero-meta-text">2D</span> Hanoi</div>
+        <div class="dot"></div>
+        <div class="hero-meta"><span class="hero-meta-text">2D</span> Da Nang</div>
+        <div class="dot"></div>
+        <div class="hero-meta"><span class="hero-meta-text">1D</span> Ho Chi Minh</div>
+      </div>
+    </div>
+    <div class="hero-actions-row">
+      <div class="price-stack">
+        <div class="price-tag">
+          <span class="price-pill">
+            <span class="val">₹ 70,000</span>
+          </span>
+          <span class="price-label">/person</span>
+        </div>
+        <div class="save-row">
+          <span class="save-badge">SAVE ₹ 20,000</span>
+          <span class="old old-price">₹ 90,000</span>
+        </div>
+      </div>
+      <div class="cta">Get A Callback</div>
+    </div>
+  </div>
+
+  <!-- SEARCH MODAL -->
+  <div class="search-modal" id="searchModal" aria-hidden="true">
+    <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search">
+      <div class="search-top">
+        <span class="ico" aria-hidden="true"></span>
+        <input type="text" id="searchQuery" placeholder="Search for destinations.." />
+      </div>
+      <div class="panel-body">
+        <div class="heading">Product Type</div>
+        <div class="chips" id="typeChips">
+          <button class="chip active" data-type="tour" type="button">Tour</button>
+          <button class="chip" data-type="activity" type="button">Activity</button>
+        </div>
+        <div class="sep" role="presentation"></div>
+        <div class="heading">Trip Duration</div>
+        <div class="chips" id="durChips">
+          <button class="chip" data-dur="1">Up to 1 Day</button>
+          <button class="chip active" data-dur="2-3">2 to 3 days</button>
+          <button class="chip" data-dur="3-5">3 to 5 days</button>
+          <button class="chip" data-dur="5-7">5 to 7 days</button>
+          <button class="chip" data-dur="7+">7+ Days</button>
+        </div>
+        <div class="sep" role="presentation"></div>
+        <div class="heading">Price Range</div>
+        <div class="range">
+          <div class="labels"><span id="minLbl">0</span><span id="maxLbl">5L</span></div>
+          <input type="range" id="priceMin" min="0" max="500000" step="1000" value="0" />
+          <input type="range" id="priceMax" min="0" max="500000" step="1000" value="500000" />
+          <div class="row">
+            <input class="text-input" id="minInput" type="number" placeholder="Min" value="0" />
+            <input class="text-input" id="maxInput" type="number" placeholder="Max" value="500000" />
+          </div>
+          <label class="checkbox-label">
+            <input type="checkbox" id="withFlights" /> I want Flights to be included
+          </label>
+        </div>
+      </div>
+      <div class="foot">
+        <button class="cta" id="searchSubmit">Search For Products</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Travel Vibes -->
+  <section class="vibes">
+    <div class="vibes-header">
+      <h3>Travel Vibes, <span class="accent">On LOOP...</span></h3>
+      <div class="sub"><strong>Vietnam</strong> through heartfelt traveler stories</div>
+    </div>
+    <div class="vibes-carousel">
+      <div class="cards-row" id="cardsRow">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="top" style="background-image:url('assets/images/vietnam_couple_1.jpg')">
+            <div class="video-wrap">
+              <video src="assets/videos/vietnam_1.mp4" muted loop playsinline preload="metadata"></video>
+            </div>
+            <button class="speaker" aria-label="Toggle sound">
+              <img src="assets/icons/volume-off-dark.svg" alt="mute" width="18" height="18" />
+            </button>
+            <div class="grad-top">
+              <div class="card-content-yellow">Amrita & Rahul's <span class="card-content-white">Honeymoon trip</span></div>
+              <div class="chip-trans">COUPLE</div>
+            </div>
+            <div class="grad-bot"></div>
+          </div>
+          <div class="bottom">
+            <div class="bottom-row">
+              <div class="duration">4 Day, 5 Night</div>
+              <div class="rating-sm">
+                <span class="star rating-star-card"></span>
+                <span class="hero-rating-text">4.8</span>
+                <span class="hero-rating-reviews">(3.5k+)</span>
+              </div>
+            </div>
+            <div class="title-p">8N Vietnam with Kids: Beaches, Bridges & Big Adventures</div>
+            <div class="price-wrap">
+              <div class="price-info">
+                <div class="old">₹ 90,000</div>
+                <div class="price-container">
+                  <div class="price-current">₹ 70,000</div>
+                  <div class="price-per-person">/person</div>
+                </div>
+              </div>
+              <div class="btn">Book Trip</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="top" style="background-image:url('assets/images/vietnam_family_1.jpg')">
+            <div class="video-wrap">
+              <video src="assets/videos/vietnam_2.mp4" muted loop playsinline preload="metadata"></video>
+            </div>
+            <button class="speaker" aria-label="Toggle sound">
+              <img src="assets/icons/volume-off-dark.svg" alt="mute" width="18" height="18" />
+            </button>
+            <div class="grad-top">
+              <div class="card-content-yellow">Sharma Family's <span class="card-content-white">Adventure trip</span></div>
+              <div class="chip-trans">FAMILY</div>
+            </div>
+            <div class="grad-bot"></div>
+          </div>
+          <div class="bottom">
+            <div class="bottom-row">
+              <div class="duration">6 Day, 5 Night</div>
+              <div class="rating-sm">
+                <span class="star rating-star-card"></span>
+                <span class="hero-rating-text">4.6</span>
+                <span class="hero-rating-reviews">(2.1k+)</span>
+              </div>
+            </div>
+            <div class="title-p">Vietnam Family Explorer: Culture & Nature Combined</div>
+            <div class="price-wrap">
+              <div class="price-info">
+                <div class="old">₹ 85,000</div>
+                <div class="price-container">
+                  <div class="price-current">₹ 65,000</div>
+                  <div class="price-per-person">/person</div>
+                </div>
+              </div>
+              <div class="btn">Book Trip</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="top" style="background-image:url('assets/images/vietnam_adventure_1.jpg')">
+            <div class="video-wrap">
+              <video src="assets/videos/vietnam_3.mp4" muted loop playsinline preload="metadata"></video>
+            </div>
+            <button class="speaker" aria-label="Toggle sound">
+              <img src="assets/icons/volume-off-dark.svg" alt="mute" width="18" height="18" />
+            </button>
+            <div class="grad-top">
+              <div class="card-content-yellow">Adventure Seekers' <span class="card-content-white">Group trip</span></div>
+              <div class="chip-trans">GROUP</div>
+            </div>
+            <div class="grad-bot"></div>
+          </div>
+          <div class="bottom">
+            <div class="bottom-row">
+              <div class="duration">5 Day, 4 Night</div>
+              <div class="rating-sm">
+                <span class="star rating-star-card"></span>
+                <span class="hero-rating-text">4.7</span>
+                <span class="hero-rating-reviews">(1.8k+)</span>
+              </div>
+            </div>
+            <div class="title-p">Sapa Trekking & Ha Long Bay Adventure Combo</div>
+            <div class="price-wrap">
+              <div class="price-info">
+                <div class="old">₹ 75,000</div>
+                <div class="price-container">
+                  <div class="price-current">₹ 58,000</div>
+                  <div class="price-per-person">/person</div>
+                </div>
+              </div>
+              <div class="btn">Book Trip</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+          <div class="top" style="background-image:url('assets/images/vietnam_culture_1.jpg')">
+            <div class="video-wrap">
+              <video src="assets/videos/vietnam_4.mp4" muted loop playsinline preload="metadata"></video>
+            </div>
+            <button class="speaker" aria-label="Toggle sound">
+              <img src="assets/icons/volume-off-dark.svg" alt="mute" width="18" height="18" />
+            </button>
+            <div class="grad-top">
+              <div class="card-content-yellow">Cultural Enthusiasts' <span class="card-content-white">Heritage tour</span></div>
+              <div class="chip-trans">CULTURE</div>
+            </div>
+            <div class="grad-bot"></div>
+          </div>
+          <div class="bottom">
+            <div class="bottom-row">
+              <div class="duration">7 Day, 6 Night</div>
+              <div class="rating-sm">
+                <span class="star rating-star-card"></span>
+                <span class="hero-rating-text">4.9</span>
+                <span class="hero-rating-reviews">(2.8k+)</span>
+              </div>
+            </div>
+            <div class="title-p">Vietnam Heritage Trail: Hoi An to Hue Discovery</div>
+            <div class="price-wrap">
+              <div class="price-info">
+                <div class="old">₹ 95,000</div>
+                <div class="price-container">
+                  <div class="price-current">₹ 78,000</div>
+                  <div class="price-per-person">/person</div>
+                </div>
+              </div>
+              <div class="btn">Book Trip</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card">
+          <div class="top" style="background-image:url('assets/images/vietnam_luxury_1.jpg')">
+            <div class="video-wrap">
+              <video src="assets/videos/vietnam_5.mp4" muted loop playsinline preload="metadata"></video>
+            </div>
+            <button class="speaker" aria-label="Toggle sound">
+              <img src="assets/icons/volume-off-dark.svg" alt="mute" width="18" height="18" />
+            </button>
+            <div class="grad-top">
+              <div class="card-content-yellow">Premium Travelers' <span class="card-content-white">Luxury experience</span></div>
+              <div class="chip-trans">LUXURY</div>
+            </div>
+            <div class="grad-bot"></div>
+          </div>
+          <div class="bottom">
+            <div class="bottom-row">
+              <div class="duration">8 Day, 7 Night</div>
+              <div class="rating-sm">
+                <span class="star rating-star-card"></span>
+                <span class="hero-rating-text">4.9</span>
+                <span class="hero-rating-reviews">(1.2k+)</span>
+              </div>
+            </div>
+            <div class="title-p">Vietnam Luxury Experience: Premium Hotels & Private Tours</div>
+            <div class="price-wrap">
+              <div class="price-info">
+                <div class="old">₹ 150,000</div>
+                <div class="price-container">
+                  <div class="price-current">₹ 125,000</div>
+                  <div class="price-per-person">/person</div>
+                </div>
+              </div>
+              <div class="btn">Book Trip</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Navigation Dots -->
+      <div class="vibes-dots" id="vibesDots">
+        <div class="vibes-dot active"></div>
+        <div class="vibes-dot"></div>
+        <div class="vibes-dot"></div>
+        <div class="vibes-dot"></div>
+        <div class="vibes-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
